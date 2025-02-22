@@ -1,6 +1,7 @@
 const express = require("express")
 const auth = require("../authUtility.js")
 let router = express.Router()
+const nodemailer = require('nodemailer');
 
 
 
@@ -33,11 +34,39 @@ router.post('/lifeAlert/smsAlert', async(req,res)=>{
     }
 
 });
-
+//lphw fcxc gfme zjtw
 router.post('/lifeAlert/emailAlert', async(req,res)=>{
     try{
-        console.log("Sending an Email Alert")
-        res.json("Hello")
+        const nodemailer = require('nodemailer');
+
+        // Using Gmail's SMTP for now to get working prototype
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'clobato@cs.stonybrook.edu',
+                pass: 'lphw fcxc gfme zjtw', // APP Password from Gmail SMTP will need to move to dotENV file at some point
+            },
+        });
+
+        const mailOptions = {
+            from: 'clobato@cs.stonybrook.edu',
+            to: 'clobato315@gmail.com',
+            subject: 'USER has FALLEN',
+            text: 'USER has FALLEN at timestamp?',
+            // can chuck html content instead with the following:
+            // html: '<h1>This is a test email</h1>',
+        };
+
+        // Send the email
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error('Error sending email:', error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+        console.log("Sending a email alert")
+        res.json("Sent email alert")
     } catch (err){
 
     }
