@@ -30,7 +30,7 @@ function HomePage() {
         <div style={styles.feature}>
           <FaHeartbeat style={styles.icon} />
           <h3>Sudden Fall Detection</h3>
-          <p>Our AI monitors sudden falls and alerts guardians immediately.</p>
+          <p>Our device monitors sudden falls and alerts guardians immediately.</p>
         </div>
 
         <div style={styles.feature}>
