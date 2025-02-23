@@ -15,9 +15,11 @@ mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true})
 var db = mongoose.connection
 db.on('error',console.error.bind(console,'MongoDB connection error: '));
 //Weird that on the last time i ran this it allowed me to make requests without the extra params but this time was required
-app.use(cors(
-    {origin: 'http://localhost:5173', // Update this with your frontend's origin
-credentials: true}));
+app.use(cors({
+    origin: ['http://localhost:5173', 'http://localhost:5174'],  // ✅ Allows both origins
+    credentials: true
+}));
+
 app.use(express.urlencoded({ extended: false })); // not sure about this
 app.use(express.json());
 app.use(cookieParser());
