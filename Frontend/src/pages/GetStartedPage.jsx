@@ -84,16 +84,21 @@ function GetStartedPage() {
 
       <h1 style={styles.title}>CREATE YOUR ACCOUNT</h1>
 
+      {/* Stepper */}
       <div style={styles.stepper}>
         <div style={styles.stepContainer}>
-          <div style={{ ...styles.step, ...(step === 1 ? styles.activeStep : {}) }}>
-            <FaEnvelope style={styles.icon} /> <span>Email</span>
+          <div style={{ ...styles.stepCircle, backgroundColor: step >= 1 ? '#007bff' : '#ccc' }}>
+            <FaEnvelope style={{ color: 'white' }} />
           </div>
-          <div style={{ ...styles.step, ...(step === 2 ? styles.activeStep : {}) }}>
-            <FaPhone style={styles.icon} /> <span>Emergency Contact</span>
+          <div style={{ ...styles.stepLine, backgroundColor: step >= 2 ? '#007bff' : '#ccc' }}></div>
+
+          <div style={{ ...styles.stepCircle, backgroundColor: step >= 2 ? '#007bff' : '#ccc' }}>
+            <FaPhone style={{ color: 'white' }} />
           </div>
-          <div style={{ ...styles.step, ...(step === 3 ? styles.activeStep : {}) }}>
-            <FaComment style={styles.icon} /> <span>Custom Message</span>
+          <div style={{ ...styles.stepLine, backgroundColor: step >= 3 ? '#007bff' : '#ccc' }}></div>
+
+          <div style={{ ...styles.stepCircle, backgroundColor: step >= 3 ? '#007bff' : '#ccc' }}>
+            <FaComment style={{ color: 'white' }} />
           </div>
         </div>
       </div>
@@ -144,8 +149,8 @@ function GetStartedPage() {
 
       {/* Navigation Buttons */}
       <div style={styles.buttonContainer}>
-        {step > 1 && <button onClick={handlePrevious} style={styles.button}>Previous</button>}
-        {step < 3 ? <button onClick={handleNext} style={styles.button}>Next</button> : <button onClick={handleSubmit} style={styles.button}>Finish</button>}
+      {step > 1 && <button onClick={handlePrevious} style={styles.button}>Previous</button>}
+      {step < 3 ? <button onClick={handleNext} style={styles.button}>Next</button> : <button onClick={handleSubmit} style={styles.button}>Finish</button>}
       </div>
     </div>
   );
@@ -160,14 +165,59 @@ const styles = {
   image: { width: '150px', height: 'auto' },
   title: { fontSize: '1.5rem', marginBottom: '2rem', color: 'black' },
   stepper: { display: 'flex', justifyContent: 'center', marginBottom: '2rem' },
-  stepContainer: { display: 'flex', justifyContent: 'space-between', width: '100%' },
-  step: { display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#666' },
-  activeStep: { color: 'black' },
-  icon: { fontSize: '1.5rem', marginBottom: '0.5rem', color: 'black' },
+  stepContainer: { display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', maxWidth: '400px' },
+  stepCircle: { width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background-color 0.3s' },
+  
+  stepLine: { 
+    width: '60px', 
+    height: '5px', 
+    borderRadius: '3px', 
+    transition: 'background-color 0.3s' 
+  },
+  
   form: { marginBottom: '2rem' },
-  stepTitle: { display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.2rem', marginBottom: '1rem', color: 'black' },
-  input: { width: '100%', padding: '0.75rem', borderRadius: '4px', border: '1px solid #ccc', fontSize: '1rem', backgroundColor: '#f9f9f9', color: 'black' },
-  addButton: { marginTop: '10px', padding: '0.5rem', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' },
-  buttonContainer: { display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' },
-  button: { padding: '0.75rem 1.5rem', backgroundColor: '#007bff', color: 'white', borderRadius: '4px', fontSize: '1rem', cursor: 'pointer' },
+
+  stepTitle: { 
+    fontSize: '1.2rem', 
+    marginBottom: '1rem', 
+    color: 'black' },
+  
+  input: { width: '100%', 
+    padding: '0.75rem', 
+    borderRadius: '4px', 
+    border: '1px solid #ccc', 
+    fontSize: '1rem' 
+  },
+  
+  addButton: { 
+    marginTop: '10px', 
+    padding: '0.5rem', 
+    backgroundColor: '#007bff', 
+    color: 'white', 
+    border: 'none', 
+    borderRadius: '4px', 
+    cursor: 'pointer' 
+  },
+
+  button: {
+    padding: '1rem 2.5rem',  // Increase padding for bigger buttons
+    backgroundColor: '#007bff', // Set button color to blue
+    color: 'white',
+    fontSize: '1.3rem', // Increase font size
+    border: 'none',
+    borderRadius: '8px',  // Slightly larger border radius
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    transition: 'background-color 0.3s',
+    boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)', // Add shadow for visibility
+  },
+  
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '40px', // Increase space between buttons
+    marginTop: '30px', // Add margin for spacing
+  },
+  
 };
+
