@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import Navbar from "./component/Navbar"; // Ensure the correct import path
 import HomePage from './pages/HomePage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import UserTypeSelection from './pages/UserTypeSelection.jsx';
@@ -8,14 +9,17 @@ import SetupProfile from './pages/SetupProfile.jsx';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<UserTypeSelection />} />
-      <Route path="/get-started" element={<GetStartedPage />} />
-      <Route path="/setup-profile" element={<SetupProfile />} />
-      <Route path="/guardian-registration" element={<GuardianRegistration />} />
-    </Routes>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<UserTypeSelection />} />
+        <Route path="/get-started" element={<GetStartedPage />} />
+        <Route path="/setup-profile" element={<SetupProfile />} />
+        <Route path="/guardian-registration" element={<GuardianRegistration />} />
+      </Routes>
+    </>
   );
 }
 

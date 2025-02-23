@@ -21,7 +21,7 @@ const UserTypeSelection = () => {
             <Box
                 sx={{
                     flex: 1,
-                    backgroundColor: '#808080', // Gray Background
+                    backgroundColor: '#0077b6', // Gray Background
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -83,7 +83,7 @@ const UserTypeSelection = () => {
                         marginTop: 1,
                         padding: '15px 50px',
                         fontSize: '20px',
-                        backgroundColor: '#333',
+                        backgroundColor: '#0077b6',
                         color: 'white',
                         borderRadius: '25px',
                         border: '2px solid #333',
