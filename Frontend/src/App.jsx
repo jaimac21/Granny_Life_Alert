@@ -1,25 +1,21 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './component/Navbar';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import GetStartedPage from './pages/GetStartedPage';
-import SetupProfile from './pages/SetupProfile';
-import ProfilePage from './pages/ProfilePage'; // Import the new page
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage';
+import LoginPage from './LoginPage';
+import UserTypeSelection from './UserTypeSelection';
+import GetStartedPage from './GetStartedPage';
+import GuardianRegistration from './GuardianRegistration';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<UserTypeSelection />} />
         <Route path="/get-started" element={<GetStartedPage />} />
-        <Route path="/setup-profile" element={<SetupProfile />} />
-        <Route path="/profile" element={<ProfilePage />} /> {/* New route */}
+        <Route path="/guardian-registration" element={<GuardianRegistration />} />
       </Routes>
-    </div>
+    </Router>
   );
 }
 

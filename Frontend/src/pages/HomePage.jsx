@@ -39,6 +39,9 @@ function HomePage() {
           <Link to="/get-started">
             <button style={{ margin: '10px', padding: '10px 20px', backgroundColor: '#333', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Register</button>
           </Link>
+          <Link to="/register">
+            <button style={{ margin: '10px', padding: '10px 20px', backgroundColor: '#333',  color: 'white',  border: 'none',  borderRadius: '5px', cursor: 'pointer'}}>User Selection</button>
+        </Link>
         </div>
       </div>
     </div>
