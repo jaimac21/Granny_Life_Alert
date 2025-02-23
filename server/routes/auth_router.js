@@ -136,4 +136,20 @@ router.get("/loggedIn",async (req,res)=>{
     }
 });
 
+router.post("/updateUser",async(req,res) =>{
+    try{
+        let userPayload = req.body;
+        console.log(userPayload);
+        const aUser = await User.findOne({ email: userPayload.email}).exec() // Assuming that email is sent in with the request
+        aUser.firstName = userPayload.firstName;
+        aUser.lastName = userPayload.lastName;
+        await aUser.save();
+        return res.status(200).json("updated with name info")
+    }
+    catch(err){
+
+    }
+
+});
+
 module.exports = router

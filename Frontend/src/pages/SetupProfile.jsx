@@ -20,7 +20,7 @@ function SetupProfile() {
   const hasCapitalLetter = /[A-Z]/.test(password);
   const passwordsMatch = password === confirmPassword;
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
     if (!hasMinLength || !hasSpecialChar || !hasNumber || !hasCapitalLetter || !passwordsMatch) {
       alert('Please ensure your password meets all requirements and matches the confirmation.');
@@ -37,6 +37,12 @@ function SetupProfile() {
       //state,
       password,
     });
+    const response = await axios.post('http://localhost:8000/updateUser', 
+      {
+        firstName,
+        lastName
+      }
+    );
     alert('Profile saved successfully!');
     navigate('/login'); // Navigate to the home page
   };

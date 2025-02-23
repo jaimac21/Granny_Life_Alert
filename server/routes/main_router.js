@@ -34,7 +34,7 @@ router.post('/lifeAlert/emailAlert', async(req,res)=>{
                 from: 'clobato@cs.stonybrook.edu',
                 to: 'clobato315@gmail.com',
                 subject: `${userQuery.email} has FALLEN`,
-                text: `${userQuery.firstName} ${userQuery.lastName} has FALLEN at ${currentTimeStamp} please contact emergency services`,
+                text: `${userQuery.firstName} ${userQuery.lastName} has FALLEN please contact emergency services`,
                 // can chuck html content instead with the following:
                 // html: '<h1>This is a test email</h1>',
             };

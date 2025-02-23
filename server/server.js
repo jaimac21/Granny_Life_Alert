@@ -30,7 +30,7 @@ app.use(('/auth',authRouter))// for some reason double parenthesis is needed but
 app.use(('/lifeAlert',mainRouter));
 app.post('/submit-email', async (req, res) => {
     try {
-        const { email, emailContacts, smsContacts, callContacts } = req.body;
+        const { email, emailContacts, smsContacts, callContacts, customMessage } = req.body;
 
         if (!email || !emailContacts.length || !smsContacts.length || !callContacts.length) {
             return res.status(400).json({ error: 'Email and at least one contact method are required' });
@@ -42,7 +42,7 @@ app.post('/submit-email', async (req, res) => {
             existingUser.emailContacts = [...new Set([...existingUser.emailContacts, ...emailContacts])];
             existingUser.smsContacts = [...new Set([...existingUser.smsContacts, ...smsContacts])];
             existingUser.callContacts = [...new Set([...existingUser.callContacts, ...callContacts])];
-
+            existingUser.customMessage = req.body.customMessage;
             await existingUser.save();
             console.log('Updated existing user:', existingUser);
             return res.status(200).json({ message: 'User contacts updated successfully!' });
@@ -52,7 +52,8 @@ app.post('/submit-email', async (req, res) => {
             email,
             emailContacts,
             smsContacts,
-            callContacts
+            callContacts,
+            customMessage
         });
 
         await newUser.save();

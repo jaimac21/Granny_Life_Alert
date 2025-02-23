@@ -64,7 +64,9 @@ function GetStartedPage() {
         email,
         emailContacts,
         smsContacts,
-        callContacts
+        callContacts,
+        customMessage
+
       });
 
       console.log("Response from server:", response.data);
