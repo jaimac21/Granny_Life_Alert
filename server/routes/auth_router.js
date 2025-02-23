@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10; //How much randomness we sprinkle into the password
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const User = require("../models/user.js");
+const User = require("../models/User.js");
 let router = express.Router();
 const auth = require("../authUtility.js")
 const tempSecret = "ha you read this loser :3 "
@@ -13,9 +13,6 @@ const tempSecret = "ha you read this loser :3 "
 
 // move this into another file and have the functions defined ther similar to hw1 model or app utility
 router.post("/registerUser",async (req, res) => {
-
-
-
     let userPayload = req.body;
 
     //No two users can create an account with the same
@@ -51,13 +48,10 @@ router.post("/registerUser",async (req, res) => {
     console.log(userPayload)
     let newPasswordHash = await bcrypt.hash(userPayload.password,salt)
 
-        //modify this with the new fields
-        //email addressed
-        // phone number
     const newUser = new User({
+        username: userPayload.username,
         email: userPayload.email,
         passwordHash: newPasswordHash
-        //
     });
 
     await newUser.save();

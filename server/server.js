@@ -6,7 +6,7 @@ const port = 8000;
 const mongoose = require('mongoose')
 const authRouter = require('./routes/auth_router.js');
 const mainRouter = require('./routes/main_router.js');
-const User = require('./models/user');
+const User = require('./models/User');
 
 
 var mongoDB = 'mongodb://127.0.0.1:27017/HopperHacks';
