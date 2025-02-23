@@ -9,7 +9,8 @@ const UserSchema = new Schema(
         smsContacts: [String],
         callContacts: [String],
         firstName: {type: String},
-        lastName: {type: String}
+        lastName: {type: String},
+        customMessage: {type: String}
     },
     { timestamps: true },
 )
