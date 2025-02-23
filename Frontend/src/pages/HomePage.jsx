@@ -11,8 +11,9 @@ function HomePage() {
 
         {/* Content */}
         <div style={styles.heroContent}>
-          <h1>Welcome to Life Alert</h1>
-          <p>Your safety, our priority.</p>
+        <h1 style={styles.heroTitle}>Welcome to Life Alert</h1>
+        <p style={styles.heroSubtitle}>Your safety, our priority.</p>
+
           <div>
             <Link to="/login">
               <button style={styles.button}>Log In</button>
@@ -57,7 +58,7 @@ const styles = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     width: '100vw', // Full width
-    minHeight: '70vh', // Full viewport height
+    minHeight: '60vh', // Full viewport height
     margin: 0,
     padding: 0,
     display: 'flex',
@@ -81,14 +82,24 @@ const styles = {
     textAlign: 'center',
     color: 'white',
   },
+
+  heroTitle: {
+    fontSize: '5rem',  // Adjust this value to make "Welcome to Life Alert" bigger
+    fontWeight: 'bold',
+  },
+
+  heroSubtitle: {
+      fontSize: '3rem', // Adjust this to make "Your safety, our priority" bigger
+  },
+
   button: {
     margin: '10px',
-    padding: '12px 24px',
+    padding: '15px 30px',
     backgroundColor: '#0077b6',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
-    fontSize: '1rem',
+    fontSize: '1.5rem',
     cursor: 'pointer',
     transition: 'background 0.3s ease',
   },
@@ -97,7 +108,7 @@ const styles = {
     color: 'white',
     display: 'flex',
     justifyContent: 'space-around',
-    padding: '40px 20px',
+    padding: '20px 20px',
     width: '80vw',   
     minWidth: '100%', 
   },
@@ -105,6 +116,7 @@ const styles = {
   feature: {
     textAlign: 'center',
     maxWidth: '250px',
+    fontSize: '1.3rem',
   },
   icon: {
     fontSize: '50px',

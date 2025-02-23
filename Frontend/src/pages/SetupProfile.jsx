@@ -5,10 +5,10 @@ function SetupProfile() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
-  const [contactNumber, setContactNumber] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
+  //const [address, setAddress] = useState('');
+  //const [contactNumber, setContactNumber] = useState('');
+  //const [city, setCity] = useState('');
+  //const [state, setState] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate(); // Initialize useNavigate
@@ -31,10 +31,10 @@ function SetupProfile() {
       firstName,
       lastName,
       email,
-      address,
-      contactNumber,
-      city,
-      state,
+      //address,
+      //contactNumber,
+      //city,
+      //state,
       password,
     });
     alert('Profile saved successfully!');
@@ -72,66 +72,6 @@ function SetupProfile() {
             onChange={(e) => setLastName(e.target.value)}
             style={styles.input}
             placeholder="Enter your last name"
-          />
-        </div>
-
-        {/* Address */}
-        <div style={styles.inputGroup}>
-          <label htmlFor="address" style={styles.label}>
-            Address
-          </label>
-          <input
-            type="text"
-            id="address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            style={styles.input}
-            placeholder="Enter your address"
-          />
-        </div>
-
-        {/* Contact Number */}
-        <div style={styles.inputGroup}>
-          <label htmlFor="contactNumber" style={styles.label}>
-            Contact Number
-          </label>
-          <input
-            type="text"
-            id="contactNumber"
-            value={contactNumber}
-            onChange={(e) => setContactNumber(e.target.value)}
-            style={styles.input}
-            placeholder="Enter your contact number"
-          />
-        </div>
-
-        {/* City */}
-        <div style={styles.inputGroup}>
-          <label htmlFor="city" style={styles.label}>
-            City
-          </label>
-          <input
-            type="text"
-            id="city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            style={styles.input}
-            placeholder="Enter your city"
-          />
-        </div>
-
-        {/* State */}
-        <div style={styles.inputGroup}>
-          <label htmlFor="state" style={styles.label}>
-            State
-          </label>
-          <input
-            type="text"
-            id="state"
-            value={state}
-            onChange={(e) => setState(e.target.value)}
-            style={styles.input}
-            placeholder="Enter your state"
           />
         </div>
 
@@ -204,12 +144,20 @@ export default SetupProfile;
 const styles = {
   container: {
     padding: '2rem',
-    maxWidth: '600px',
+    maxWidth: '800px',  // Increase width to fit all input fields
     margin: '0 auto',
     textAlign: 'center',
-    backgroundColor: 'white', // White background
-    color: 'black', // Black text for contrast
+    backgroundColor: '#81d4fa', // Light blue background
+    color: 'black',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center', // Centers content horizontally
+    minHeight: '100vh', // Ensures the form takes the full height of the viewport
+    borderRadius: '10px', // Slight rounding for a better look
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)', // Soft shadow for better contrast
+    width: '100%',  // Ensure it spans full width within its maxWidth
   },
+
   title: {
     fontSize: '1.5rem',
     marginBottom: '2rem',

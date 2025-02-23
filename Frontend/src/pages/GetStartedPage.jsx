@@ -160,64 +160,42 @@ export default GetStartedPage;
 
 // Styles
 const styles = {
-  container: { padding: '2rem', maxWidth: '600px', margin: '0 auto', textAlign: 'center', minHeight: '100vh', backgroundColor: 'white', color: 'black' },
+  container: { 
+    padding: '2rem', 
+    maxWidth: '600px', 
+    margin: '0 auto', 
+    textAlign: 'center', 
+    minHeight: '100vh', 
+    backgroundColor: '#81d4fa', // Navy blue background
+    color: 'white', // Change text color to white for better contrast
+  },
   imageContainer: { marginBottom: '1rem' },
   image: { width: '150px', height: 'auto' },
-  title: { fontSize: '1.5rem', marginBottom: '2rem', color: 'black' },
+  title: { fontSize: '1.5rem', marginBottom: '2rem', color: 'white' }, // Updated text color
   stepper: { display: 'flex', justifyContent: 'center', marginBottom: '2rem' },
   stepContainer: { display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', maxWidth: '400px' },
   stepCircle: { width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background-color 0.3s' },
-  
-  stepLine: { 
-    width: '60px', 
-    height: '5px', 
-    borderRadius: '3px', 
-    transition: 'background-color 0.3s' 
-  },
-  
+  stepLine: { width: '60px', height: '5px', borderRadius: '3px', transition: 'background-color 0.3s' },
   form: { marginBottom: '2rem' },
-
-  stepTitle: { 
-    fontSize: '1.2rem', 
-    marginBottom: '1rem', 
-    color: 'black' },
-  
-  input: { width: '100%', 
-    padding: '0.75rem', 
-    borderRadius: '4px', 
-    border: '1px solid #ccc', 
-    fontSize: '1rem' 
-  },
-  
-  addButton: { 
-    marginTop: '10px', 
-    padding: '0.5rem', 
-    backgroundColor: '#007bff', 
-    color: 'white', 
-    border: 'none', 
-    borderRadius: '4px', 
-    cursor: 'pointer' 
-  },
-
+  stepTitle: { fontSize: '1.2rem', marginBottom: '1rem', color: 'white' }, // Updated text color
+  input: { width: '100%', padding: '0.75rem', borderRadius: '4px', border: '1px solid #ccc', fontSize: '1rem' },
+  addButton: { marginTop: '10px', padding: '0.5rem', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' },
   button: {
-    padding: '1rem 2.5rem',  // Increase padding for bigger buttons
-    backgroundColor: '#007bff', // Set button color to blue
+    padding: '1rem 2.5rem',
+    backgroundColor: '#007bff',
     color: 'white',
-    fontSize: '1.3rem', // Increase font size
+    fontSize: '1.3rem',
     border: 'none',
-    borderRadius: '8px',  // Slightly larger border radius
+    borderRadius: '8px',
     cursor: 'pointer',
     fontWeight: 'bold',
     transition: 'background-color 0.3s',
-    boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)', // Add shadow for visibility
+    boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
   },
-  
   buttonContainer: {
     display: 'flex',
     justifyContent: 'center',
-    gap: '40px', // Increase space between buttons
-    marginTop: '30px', // Add margin for spacing
+    gap: '40px',
+    marginTop: '30px',
   },
-  
 };
-

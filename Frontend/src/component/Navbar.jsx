@@ -28,7 +28,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: 'white', // Navbar background color
-    padding: '10px 20px',
+    padding: '1px 20px',
     borderBottom: '1px solid #ccc',
     
   },
@@ -37,8 +37,8 @@ const styles = {
     alignItems: 'center',
   },
   logo: {
-    width: '100px', // Adjust logo size
-    height: '100px',
+    width: '80px', // Adjust logo size
+    height: '80px',
     marginRight: '10px',
   },
   title: {

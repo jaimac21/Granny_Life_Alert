@@ -21,7 +21,7 @@ const UserTypeSelection = () => {
             <Box
                 sx={{
                     flex: 1,
-                    backgroundColor: '#0077b6', // Gray Background
+                    backgroundColor: '#0077b6', // Blue Background
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -29,6 +29,29 @@ const UserTypeSelection = () => {
                     color: 'white',
                     textAlign: 'center',
                     position: 'relative',
+                    overflow: 'hidden', // Ensure shapes don't overflow
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '200px', // Larger circle
+                        height: '200px', // Larger circle
+                        backgroundColor: 'rgba(173, 216, 230, 0.3)', // Light blue
+                        borderRadius: '50%',
+                        transform: 'translate(-30%, -30%)', // Stick out more
+                    },
+                    '&::after': {
+                        content: '""',
+                        position: 'absolute',
+                        bottom: 0,
+                        right: 0,
+                        width: '250px', // Larger circle
+                        height: '250px', // Larger circle
+                        backgroundColor: 'rgba(173, 216, 230, 0.3)', // Light blue
+                        borderRadius: '50%',
+                        transform: 'translate(40%, 40%)', // Stick out more
+                    },
                 }}
             >
                 <Typography variant="h3" fontWeight="bold" sx={{ marginBottom: 2 }}>
@@ -71,6 +94,29 @@ const UserTypeSelection = () => {
                     color: 'black',
                     textAlign: 'center',
                     position: 'relative',
+                    overflow: 'hidden', // Ensure shapes don't overflow
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        right: 0,
+                        width: '220px', // Larger circle
+                        height: '220px', // Larger circle
+                        backgroundColor: 'rgba(0, 119, 182, 0.3)', // Blue
+                        borderRadius: '50%',
+                        transform: 'translate(40%, -40%)', // Stick out more
+                    },
+                    '&::after': {
+                        content: '""',
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: '180px', // Larger circle
+                        height: '180px', // Larger circle
+                        backgroundColor: 'rgba(0, 119, 182, 0.3)', // Blue
+                        borderRadius: '50%',
+                        transform: 'translate(-40%, 40%)', // Stick out more
+                    },
                 }}
             >
                 <Typography variant="h3" fontWeight="bold" sx={{ marginBottom: 2 }}>

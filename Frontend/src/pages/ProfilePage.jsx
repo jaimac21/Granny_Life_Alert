@@ -174,7 +174,7 @@ const styles = {
     maxWidth: '600px',
     margin: '0 auto',
     textAlign: 'center',
-    backgroundColor: 'white', // White background
+    backgroundColor: '#81d4fa', // White background
     color: 'black', // Black text for contrast
   },
   title: {
