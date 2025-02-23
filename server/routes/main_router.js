@@ -2,7 +2,6 @@ const express = require("express")
 const auth = require("../authUtility.js")
 let router = express.Router()
 const axios = require("axios");  // Import axios for API requests
-const nodemailer = require('nodemailer');
 const User = require("../models/User.js");
 
 
@@ -114,14 +113,16 @@ async function sendWhatsAppMessage(to, message) {
 
 router.post('/lifeAlert/fallAlert', async(req,res)=>{
     try{
+        console.log("Hello")
         //As long as there are the
         const userPayload = req.body; //user Email Address
         //payload should contain the location and the email address as keys
+        console.log(userPayload)
 
-
-        const userQuery = await User.findOne({email: userPayload})
+        const userQuery = await User.findOne({email: userPayload.email})
         const userEmails = userQuery.emailContacts;
         const userNumbers = userQuery.smsContacts;
+        console.log(userQuery)
         // WhatsApp API Credentials (Stored in .env)
 
         if (userNumbers){
@@ -170,7 +171,7 @@ router.post('/lifeAlert/fallAlert', async(req,res)=>{
         }
 
         
-        res.json("Sent Alerts")
+        res.status(201).json("Finished Sending")
 
     } catch (err){
 
