@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-
+import axios from 'axios'
 function SetupProfile() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -37,10 +37,12 @@ function SetupProfile() {
       //state,
       password,
     });
+    console.log("Test");
     const response = await axios.post('http://localhost:8000/updateUser', 
       {
         firstName,
-        lastName
+        lastName,
+        email: "clobato@cs.stonybrook.edu"
       }
     );
     alert('Profile saved successfully!');

@@ -38,7 +38,7 @@ router.post('/lifeAlert/emailAlert', async(req,res)=>{
                 // can chuck html content instead with the following:
                 // html: '<h1>This is a test email</h1>',
             };
-            // Send the email
+            // Send the email 
             transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
                     console.error('Error sending email:', error);

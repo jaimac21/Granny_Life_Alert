@@ -144,6 +144,7 @@ router.post("/updateUser",async(req,res) =>{
         aUser.firstName = userPayload.firstName;
         aUser.lastName = userPayload.lastName;
         await aUser.save();
+        console.log("Updated user name")
         return res.status(200).json("updated with name info")
     }
     catch(err){
