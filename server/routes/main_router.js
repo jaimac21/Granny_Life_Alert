@@ -6,37 +6,9 @@ const User = require("../models/User.js");
 
 
 
-//Get Requests
-
-
-
-
-
-
-router.get('/contacts/:_user', auth.verify, async(req,res)=>{
-    try{
-        //Place Holder
-
-    }
-    catch (error) {
-        //We do this just incase there is some kind of error the server wont just die instantly
-        console.log(error);
-    }
-});
-
-
 
 //Post Requests
-router.post('/lifeAlert/smsAlert', async(req,res)=>{
-    try{
-        console.log("Testing if this route works")
-        res.json("Hello")
-    }catch (err) {
-        console.log(err)
-    }
 
-});
-//lphw fcxc gfme zjtw
 router.post('/lifeAlert/emailAlert', async(req,res)=>{
     try{
         const userPayload = req.body; //user Email Address
