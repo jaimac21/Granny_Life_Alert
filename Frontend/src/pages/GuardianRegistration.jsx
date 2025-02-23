@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TextField, Button, Container, Typography } from '@mui/material';
+import { TextField, Button, Container, Typography, Box } from '@mui/material';
 
 const GuardianRegistration = () => {
     const navigate = useNavigate();
@@ -16,23 +16,67 @@ const GuardianRegistration = () => {
     };
 
     return (
-        <Container maxWidth="sm" style={{ textAlign: 'center', marginTop: '50px' }}>
-            <Typography variant="h4" gutterBottom>
+        <Container 
+            maxWidth="sm" 
+            sx={{
+                textAlign: 'center',
+                marginTop: '50px',
+                fontFamily: 'serif', // Use default serif font like GetStartedPage
+                backgroundColor: 'white',
+                padding: '2rem',
+                borderRadius: '10px',
+            }}
+        >
+            {/* Image Section */}
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                <img src="/images/bunny5.png" alt="Guardian Icon" style={{ width: '150px', height: 'auto' }} />
+            </Box>
+
+            {/* Title - Use Serif Font (Same as GetStartedPage) */}
+            <Typography 
+                variant="h4" 
+                sx={{ 
+                    fontFamily: 'serif', // Match GetStartedPage
+                    fontWeight: 'bold',
+                    marginBottom: '1.5rem',
+                }}
+            >
                 Enter the Patient's Email
             </Typography>
 
-            <TextField 
-                label="Patient's Email" 
-                variant="outlined" 
-                fullWidth 
-                margin="normal" 
-                value={patientEmail} 
-                onChange={(e) => setPatientEmail(e.target.value)} 
-            />
+            {/* Input Field */}
+            <Box sx={{ marginBottom: '2rem' }}>
+                <TextField 
+                    label="Patient's Email" 
+                    variant="outlined" 
+                    fullWidth 
+                    margin="normal" 
+                    value={patientEmail} 
+                    onChange={(e) => setPatientEmail(e.target.value)} 
+                    sx={{ backgroundColor: '#f9f9f9', borderRadius: '4px', fontSize: '1rem' }}
+                />
+            </Box>
 
-            <Button variant="contained" color="primary" onClick={handleSubmit} style={{ marginTop: '20px' }}>
-                Continue
-            </Button>
+            {/* Submit Button */}
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Button 
+                    variant="contained" 
+                    onClick={handleSubmit} 
+                    sx={{
+                        padding: '0.75rem 1.5rem',
+                        backgroundColor: '#007bff',
+                        color: '#fff',
+                        borderRadius: '4px',
+                        fontSize: '1rem',
+                        cursor: 'pointer',
+                        "&:hover": {
+                            backgroundColor: '#0056b3',
+                        },
+                    }}
+                >
+                    Continue
+                </Button>
+            </Box>
         </Container>
     );
 };
