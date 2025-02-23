@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage.jsx';
 import UserTypeSelection from './pages/UserTypeSelection.jsx';
 import GetStartedPage from './pages/GetStartedPage.jsx';
 import GuardianRegistration from './pages/GuardianRegistration.jsx';
+import SetupProfile from './pages/SetupProfile.jsx';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<UserTypeSelection />} />
       <Route path="/get-started" element={<GetStartedPage />} />
+      <Route path="/setup-profile" element={<SetupProfile />} />
       <Route path="/guardian-registration" element={<GuardianRegistration />} />
     </Routes>
   );
