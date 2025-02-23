@@ -4,10 +4,13 @@ const Schema = mongoose.Schema
 const UserSchema = new Schema(
     {
         email: { type : String, required: true },
-        passwordHash: { type: String, required: true },
+        passwordHash: { type: String, required: false },
         emailContacts: [String],
         smsContacts: [String],
-        callContacts: [String]
+        callContacts: [String],
+        firstName: {type: String},
+        lastName: {type: String},
+        customMessage: {type: String}
     },
     { timestamps: true },
 )
