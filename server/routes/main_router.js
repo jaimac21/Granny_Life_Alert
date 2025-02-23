@@ -85,7 +85,7 @@ router.post('/lifeAlert/emailAlert', async(req,res)=>{
 
 async function sendWhatsAppMessage(to, message) {
     const WHATSAPP_PHONE_ID = "607122619141872";
-    const WHATSAPP_ACCESS_TOKEN = "EAAOIjBfHfGoBO88OJmg8DcIroNvoAZBcmGbQlqJPqFuuVS7sEGcBXdCEJR6ZAri4eDyBe5l7aFhXqSOGBQK8i8zHMO60upRQPhz11WQgMLksVv4TkZAW73ZAzOzVRBDjLO101ZCJGcGFkUCiWcOPoOt4E5d4PQZAt1541DKhXEQTopDHJMBhbGO35z0Bnq46g1blA6Lo3kOlC5EtJaaz2JXloHrFvtd6S0v5wZD";
+    const WHATSAPP_ACCESS_TOKEN = "EAAOIjBfHfGoBO4r1x5PYCNEB0uVZCBwvFp8SrZAzxCgjkkU2StO8wfEY9ju10XoHO6aOQnvZBMHUKioJAtdttAQ85QU8heYAvNMNbL1MCoOiIdTqrcQse2ZA0eiZCL3ZAFeNaVRhV6X5iNpsUf1ZA0nw3fwgiPleXOKs17Ggs3QQa1bH8igGRobCNFqdc1ZCqFnfjydjyoX5RZAS6maSBI48cR0RgdBXjI3KwXZBAZD";
     const url = `https://graph.facebook.com/v18.0/${WHATSAPP_PHONE_ID}/messages`;
 
     const data = {
