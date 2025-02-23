@@ -7,7 +7,9 @@ const UserSchema = new Schema(
         passwordHash: { type: String, required: false },
         emailContacts: [String],
         smsContacts: [String],
-        callContacts: [String]
+        callContacts: [String],
+        firstName: {type: String},
+        lastName: {type: String}
     },
     { timestamps: true },
 )
