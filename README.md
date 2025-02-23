@@ -1,5 +1,5 @@
 # Granny_Life_Alert
-# Karen Cho, Jaima Choudhury, Amshitha Sivarajah, Chris Lobato 
+# Karen Cho, Jaima Choudhury, Amshi Sivarajah, Chris Lobato 
 
 ## Description
 IoT project that uses the 90s Life Alert as inspiration to build a device that detects falls and sends WhatsApp and Email Alerts
