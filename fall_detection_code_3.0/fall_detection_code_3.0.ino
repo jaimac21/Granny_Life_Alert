@@ -16,15 +16,10 @@ int angleChange=0;
 #define BUZZER_PIN 14
 #define BUTTON 12
 bool buzzer_on = false;
-const char *ssid =  "IEEE@175";     // Replace with your WIFI SSID
-const char *pass =  "connect@175"; // Replace with your WIFI PASSWORD
+const char *ssid =  "YOUR_WIFI_SSID";     // Replace with your WIFI SSID
+const char *pass =  "YOUR_WIFI_PASSWORD"; // Replace with your WIFI PASSWORD
 //Your Domain name with URL path or IP address with path
-String serverName = "http://192.168.56.1:8000/lifeAlert/fallAlert";
-
-
-// void send_event(const char *event);
-// const char *host = "maker.ifttt.com";
-// const char *privateKey = "gkb_HtIpE-FeOWMH20obLTvUR7_fPipDyj_hdTJF2od";
+String serverName = "REPLACE_WITH_YOUR_SERVER_NAME";
 
 int fall_detect_time = 0;
 int buzz_off_time = 0;
@@ -174,12 +169,7 @@ void send_http(){
      
       // If you need an HTTP request with a content type: application/json, use the following:
       http.addHeader("Content-Type", "application/json");
-      int httpResponseCode = http.POST("{\"email\":\"clobato315@gmail.com\",\"message\":\"Granny has fallen\"}");
-
-      // // Your Domain name with URL path or IP address with path
-      // http.begin(serverPath.c_str());
-      // If you need Node-RED/server authentication, insert user and password below
-      //http.setAuthorization("REPLACE_WITH_SERVER_USERNAME", "REPLACE_WITH_SERVER_PASSWORD");
+      int httpResponseCode = http.POST("{\"email\":\"enter_email_address_of_interest\",\"message\":\"Granny has fallen\"}");
         
       // Send HTTP GET request
       //int httpResponseCode = http.GET();
@@ -218,37 +208,3 @@ void send_http(){
   }
 
 }
-
-// void send_event(const char *event)
-// {
-//   Serial.print("Connecting to "); 
-//   Serial.println(host);
-//   WiFiClient client;
-//   const int httpPort = 80;
-//   if (!client.connect(host, httpPort)) {
-//     Serial.println("Connection failed");
-//     return;
-//   }
-//   String url = "/trigger/";
-//   url += event;
-//   url += "/with/key/";
-//   url += privateKey;
-//   Serial.print("Requesting URL: ");
-//   Serial.println(url);
-//   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
-//                "Host: " + host + "\r\n" + 
-//                "Connection: close\r\n\r\n");
-//   while(client.connected())
-//   {
-//     if(client.available())
-//     {
-//       String line = client.readStringUntil('\r');
-//       Serial.print(line);
-//     } else {
-//       delay(50);
-//     };
-//   }
-//   Serial.println();
-//   Serial.println("closing connection");
-//   client.stop();
-// }
